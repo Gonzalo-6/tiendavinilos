@@ -12,7 +12,7 @@ import java.io.IOException;
 public class TiendaVinilos {
     /**
      * Represnta el menú de nuestra tienda con todos sus submenus
-     * autor Gonzalo
+     * autor Gonzalo-6
      * version 1.0
      */
 }

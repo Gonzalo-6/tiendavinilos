@@ -3,7 +3,7 @@ import java.io.Serializable;
 public class Vinilo implements Serializable {
     /**
      * Represnta el producto que vendemos
-     * autor Gonzalo
+     * autor Gonzalo-6
      * version 1.0
      */
     private String titulo;
