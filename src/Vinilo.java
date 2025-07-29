@@ -1,6 +1,11 @@
 
 import java.io.Serializable;
 public class Vinilo implements Serializable {
+    /**
+     * Represnta el producto que vendemos
+     * autor Gonzalo
+     * version 1.0
+     */
     private String titulo;
     private String artista;
     private double precio;

@@ -10,6 +10,12 @@ import java.io.IOException;
 
 
 public class TiendaVinilos {
+    /**
+     * Represnta el menú de nuestra tienda con todos sus submenus
+     * autor Gonzalo
+     * version 1.0
+     */
+}
     static Scanner sc = new Scanner(System.in);
     static ArrayList<Cliente> clientes = new ArrayList<>();
     static ArrayList<Vinilo> vinilos = new ArrayList<>();
