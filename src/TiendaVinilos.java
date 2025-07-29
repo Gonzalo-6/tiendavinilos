@@ -15,7 +15,7 @@ public class TiendaVinilos {
      * autor Gonzalo-6
      * version 1.0
      */
-}
+
     static Scanner sc = new Scanner(System.in);
     static ArrayList<Cliente> clientes = new ArrayList<>();
     static ArrayList<Vinilo> vinilos = new ArrayList<>();
@@ -271,3 +271,64 @@ public class TiendaVinilos {
             System.out.println("Cliente DNI: " + dni + " - Total Comprado: " + totales.get(dni) + "€");
         }
     }
+// Métodos para guardar y cargar datos
+
+
+
+@SuppressWarnings("unchecked")
+    public static <T> ArrayList<T> cargarDatos(String nombreArchivo) {
+        ArrayList<T> lista = new ArrayList<>();
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(nombreArchivo))) {
+        lista = (ArrayList<T>) ois.readObject();
+    } catch (FileNotFoundException e) {
+        // Archivo no existe, empieza con lista vacía
+    } catch (IOException | ClassNotFoundException e) {
+        System.out.println("Error al cargar datos de " + nombreArchivo);
+    }
+    return lista;
+    }
+
+    public static <T> void guardarDatos(ArrayList<T> lista, String nombreArchivo) {
+    try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(nombreArchivo))) {
+        oos.writeObject(lista);
+    } catch (IOException e) {
+        System.out.println("Error al guardar datos en " + nombreArchivo);
+    }
+}
+static void exportarClientesTXT() {
+    try (FileWriter writer = new FileWriter("clientes.txt")) {
+        for (Cliente c : clientes) {
+            writer.write(c.toString() + "\n");
+        }
+        System.out.println("✅ Clientes exportados a clientes.txt");
+    } catch (IOException e) {
+        System.out.println("❌ Error al exportar clientes: " + e.getMessage());
+    }
+}
+
+static void exportarVinilosTXT() {
+    try (FileWriter writer = new FileWriter("vinilos.txt")) {
+        for (Vinilo v : vinilos) {
+            writer.write(v.toString() + "\n");
+        }
+        System.out.println("✅ Vinilos exportados a vinilos.txt");
+    } catch (IOException e) {
+        System.out.println("❌ Error al exportar vinilos: " + e.getMessage());
+    }
+}
+
+static void exportarVentasTXT() {
+    try (FileWriter writer = new FileWriter("ventas.txt")) {
+        for (Venta v : ventas) {
+            writer.write(v.toString() + "\n");
+        }
+        System.out.println("✅ Ventas exportadas a ventas.txt");
+    } catch (IOException e) {
+        System.out.println("❌ Error al exportar ventas: " + e.getMessage());
+    }
+}
+
+
+}
+
+
