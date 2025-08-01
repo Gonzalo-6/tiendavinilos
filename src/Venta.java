@@ -17,7 +17,8 @@ public class Venta implements Serializable {
         this.vinilos = new ArrayList<>();
     }
 
-    public void añadirVinilo(Vinilo vinilo) {
+
+    public void anadirVinilo(Vinilo vinilo) {
         vinilos.add(vinilo);
     }
 
@@ -28,6 +29,9 @@ public class Venta implements Serializable {
         }
         return total;
     }
+    public ArrayList<Vinilo> getVinilos() {
+        return vinilos;
+    }
 
     @Override
     public String toString() {
@@ -36,3 +40,6 @@ public class Venta implements Serializable {
 
     public Cliente getCliente() { return cliente; }
 }
+
+
+

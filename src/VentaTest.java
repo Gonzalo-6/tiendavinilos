@@ -3,6 +3,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.List;
 
 
+
 public class VentaTest {
 
     Cliente cliente;
@@ -24,16 +25,16 @@ public class VentaTest {
     }
 
     @Test
-    void testAñadirVinilo() {
-        venta.añadirVinilo(vinilo);
+    void testAnadirVinilo() {
+        venta.anadirVinilo(vinilo);
         List<Vinilo> lista = venta.getVinilos();
         assertTrue(lista.contains(vinilo));
     }
 
     @Test
     void testCalcularTotal() {
-        venta.añadirVinilo(vinilo);
-        venta.añadirVinilo(vinilo);
+        venta.anadirVinilo(vinilo);
+        venta.anadirVinilo(vinilo);
         assertEquals(40.0, venta.calcularTotal());
     }
 }

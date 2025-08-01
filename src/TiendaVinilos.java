@@ -262,7 +262,7 @@ public class TiendaVinilos {
             for (Vinilo v : vinilos) {
                 if (v.getTitulo().equalsIgnoreCase(titulo)) {
                     if (v.getStock() > 0) {
-                        venta.añadirVinilo(v);
+                        venta.anadirVinilo(v);
                         v.reducirStock();
                         System.out.println("Vinilo añadido a la venta.");
                     } else {
